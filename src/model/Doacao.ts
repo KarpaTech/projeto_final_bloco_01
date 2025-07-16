@@ -8,40 +8,37 @@ export abstract class Conta {
   static gerarNumero(): number {
     throw new Error("Method not implemented.");
   }
-  private _numero: number;
-  private _agencia: number;
+  private _cpf: number;
+  private _cep: number;
   private _tipo: number;
-  private _titular: string;
   private _saldo: number;
 
   constructor(
-    numero: number,
-    agencia: number,
+    cpf: number,
+    cep: number,
     tipo: number,
-    titular: string,
     saldo: number
   ) {
-    this._numero = numero;
-    this._agencia = agencia;
+    this._cpf = cpf;
+    this._cep = cep;
     this._tipo = tipo;
-    this._titular = titular;
     this._saldo = saldo;
   }
 
   public get numero() {
-    return this._numero;
+    return this._cpf;
   }
 
   public set numero(numero: number) {
-    this._numero = numero;
+    this._cpf = numero;
   }
 
-  public get agencia() {
-    return this._agencia;
+  public get cep() {
+    return this._cep;
   }
 
-  public set agencia(agencia: number) {
-    this._agencia = agencia;
+  public set cep(cep: number) {
+    this._cep = cep;
   }
 
   public get tipo() {
@@ -53,11 +50,7 @@ export abstract class Conta {
   }
 
   public get titular() {
-    return this._titular;
-  }
-
-  public set titular(titular: string) {
-    this._titular = titular;
+    return this.;
   }
 
   public get saldo() {
@@ -87,10 +80,10 @@ export abstract class Conta {
 
     switch (this._tipo) {
       case 1:
-        tipo = "Conta Corrente";
+        tipo = "Doação de Alimento";
         break;
       case 2:
-        tipo = "Conta Poupança";
+        tipo = "Doaçao em Dinheiro";
         break;
     }
 
@@ -103,18 +96,18 @@ export abstract class Conta {
     console.log("*****************************************************");
     console.log(
       Colors.fg.bluestrong,
-      "Numero da Conta: " + this._numero,
+      "Numero da Conta: " + this._cpf,
       Colors.reset
     );
     console.log(
       Colors.fg.bluestrong,
-      "Agência: " + this._agencia,
+      "Agência: " + this._cep,
       Colors.reset
     );
     console.log(Colors.fg.bluestrong, "Tipo da Conta: " + tipo, Colors.reset);
     console.log(
       Colors.fg.bluestrong,
-      "Titular: " + this._titular,
+      "Titular: " + this.,
       Colors.reset
     );
     console.log(
